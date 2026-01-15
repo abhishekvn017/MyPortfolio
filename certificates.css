@@ -1,0 +1,114 @@
+/* Certificates Section */
+.certificates {
+    background: var(--bg-secondary);
+}
+
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.certificate-card {
+    background: var(--bg-terminal);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid rgba(255, 159, 100, 0.1);
+    transition: all var(--transition-normal);
+}
+
+.certificate-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--code-purple);
+    box-shadow: var(--shadow-md);
+}
+
+.certificate-image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 159, 100, 0.1);
+}
+
+.certificate-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-slow);
+}
+
+.certificate-card:hover .certificate-image img {
+    transform: scale(1.05);
+}
+
+.certificate-content {
+    padding: 2rem;
+}
+
+.certificate-content::before {
+    content: '// Certificate';
+    display: block;
+    color: var(--code-green);
+    font-style: italic;
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+}
+
+.certificate-title {
+    font-size: 1.3rem;
+    color: var(--text-accent);
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+
+.certificate-platform {
+    color: var(--code-orange);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.certificate-platform::before {
+    content: '> ';
+    color: var(--code-green);
+}
+
+.certificate-instructor {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 1.25rem;
+}
+
+.certificate-details {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 159, 100, 0.1);
+}
+
+.certificate-date,
+.certificate-duration {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--code-blue);
+    font-size: 0.85rem;
+}
+
+.certificate-date i,
+.certificate-duration i {
+    color: var(--code-orange);
+}
+
+@media (max-width: 768px) {
+    .certificates-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .certificate-image {
+        height: 250px;
+    }
+}
